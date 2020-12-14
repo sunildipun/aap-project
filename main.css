@@ -1,0 +1,346 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+  font-family: "Roboto", sans-serif; 
+  height: 100vh;
+  width: 100vw;
+};
+
+.container {
+  height: 100vh;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  background-color: #ce3733;
+}
+
+.brand {
+  flex: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+.title {
+  background-color: #303030;
+  height: 20px;
+  width: 35px;
+}
+
+#title {
+  background-color: #303030;
+  height: 3em;
+  width: 10em;
+}
+
+.search {
+  flex: 80;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search .search-box {
+  width: 40em;
+  height: 3em;
+  background-color: #a12928;
+  border: none;
+  outline: none;
+  padding: 0 3px;
+  color: #fff;
+  background-image: url(./icons/search_icon.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .banner {
+  display: flex;
+  /* background-image: url(./images/B&W_bg.jpg); */
+  background: linear-gradient(45deg, #000, transparent) ,url(./images/B&W_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10px 30px;
+  color: #fff;
+  border-top: 25px #a12928 solid;
+  height: 400px;
+}
+
+.content .banner::before {
+  content: '';
+}
+
+.banner .banner__left {
+  padding: 0 50px;
+}
+
+.banner .banner__left .header {
+  font-size: 3rem;
+  margin: 25px 0 8px;
+}
+
+.banner .banner__left .sub-header {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0 0 20px
+}
+
+.banner .banner__left .text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.banner .banner__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .cards-holder {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: 50px;
+}
+
+.cards-holder .cards {
+  height: 200px;
+  width: 300px;
+  border: 10px solid #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white
+}
+
+.card-1 {
+  background-color: #35d354;
+}
+
+.card-2 {
+  background-color: #1b2191;
+}
+
+.card-3 {
+  background-color: #d822ee;
+}
+
+
+.footer {
+  width: 100%;
+  height: 150px;
+  background-color: #272727;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+}
+
+.footer .left {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.footer .right {
+  display: flex;
+  flex-direction: column;
+  padding: 50px
+}
+
+.links {
+  text-decoration: none;
+  color: #fff
+}
+
+.card-text {
+  font-weight: 200;
+}
+
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .petrol {
+    width: 340px;
+    position: relative;
+    top: 35%;
+  }
+  .content .cards-holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    padding: 40px 20px;
+  }
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .petrol {
+    width: 340px;
+    position: relative;
+    top: 35%;
+  }
+
+  .content .cards-holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    padding: 40px 20px;
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .content .banner {
+    flex-direction: column;
+  }
+
+  .search .search-box {
+    width: 18em;
+    height: 3em;
+  }
+
+  .content .cards-holder { 
+    bottom: 0;
+    flex-direction: column;
+    margin-top: 90px;
+  }
+
+  .petrol {
+    width: 340px;
+  }
+
+  .banner .banner__left {
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+
+  .banner .banner__left .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .cards-holder .cards {
+    height: 90px;
+    border: none;
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  #title {
+    width: 3em;
+  }
+
+
+  
+  
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .content .banner {
+    flex-direction: column;
+  }
+  .search .search-box {
+    width: 18em;
+    height: 3em;
+  }
+  .content .cards-holder { 
+    bottom: 0;
+    flex-direction: column;
+    margin-top: 90px;
+  }
+
+  .petrol {
+    width: 340px;
+  }
+
+  .banner .banner__left {
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+
+  .banner .banner__left .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .cards-holder .cards {
+    height: 90px;
+    width: auto;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  #title {
+    width: 3em;
+  }
+
+
+  
+  
+}
